@@ -10,7 +10,7 @@
       <%
       String db = "aroundtheworldtest",
       username  = "Team4",
-      password  = "Team4,
+      password  = "Team4",
       table     = "test_table";
 
       try {
