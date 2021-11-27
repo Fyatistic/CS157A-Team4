@@ -19,7 +19,7 @@ import javax.persistence.JoinColumn;
 @Entity
 @Table(name =  "user", uniqueConstraints = @UniqueConstraint(columnNames = "username"))
 public class User {
-	
+	// primary key
 	@Id
 	@GeneratedValue(strategy =  GenerationType.IDENTITY)
 	private Long id;
@@ -30,6 +30,8 @@ public class User {
 	
 	private String password;
 	
+	// retrieves all roles eagerly given user
+	// operations on parent entity also performed on child entities
 	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinTable(
 			name = "users_roles",
@@ -46,7 +48,7 @@ public class User {
 	
 	public User(String username, String email, String password, Collection<Role> roles) {
 		super();
-    this.username = username;
+    	this.username = username;
 		this.email = email;
 		this.password = password;
 		this.roles = roles;
@@ -57,13 +59,13 @@ public class User {
 	public void setId(Long id) {
 		this.id = id;
 	}
-  public String getUsername() {
-    return username;
-  }
+  	public String getUsername() {
+    	return username;
+  	}
 
-  public void setUsername(String username) {
-    this.username = username;
-  }
+  	public void setUsername(String username) {
+    	this.username = username;
+  	}
 	public String getEmail() {
 		return email;
 	}
