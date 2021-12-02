@@ -47,8 +47,10 @@ public class User {
 				            name = "role_id", referencedColumnName = "id"))
 	private Collection<Role> roles;
 
-	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-	@LazyCollection(LazyCollectionOption.FALSE)
+	//@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+	@OneToMany(fetch=FetchType.EAGER, cascade = CascadeType.ALL)
+	//@LazyCollection(LazyCollectionOption.FALSE)
+	@JoinColumn(name="user_id")
 	private Collection<Trip> trips;
 	
 	public User() {

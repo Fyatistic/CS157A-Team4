@@ -32,7 +32,7 @@ public class UserTripController {
 
     // post request
     @PostMapping
-    public String createTrip(@ModelAttribute("user") UserTripDto tripDto) {
+    public String createTrip(@ModelAttribute("trip") UserTripDto tripDto) {
         tripService.save(tripDto);
         return "createtrip_success";
     }
