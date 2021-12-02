@@ -44,6 +44,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		http.authorizeRequests().antMatchers(
 				 	"/registration**",
 					"/createtrip**",
+					"/createtrip_success**",
 				 	"/error**",
 	                "/js/**",
 	                "/css/**",

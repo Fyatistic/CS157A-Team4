@@ -1,7 +1,7 @@
 package com.example.aroundtheworld;
 
 
-import java.util.Date;
+import java.sql.Date;
 import java.util.Collection;
 
 import javax.persistence.CascadeType;
@@ -27,10 +27,10 @@ public class Trip {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long tripid;
 
-    @DateTimeFormat(pattern = "yyyy-MM-dd hh:mm:ss")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date startDate;
 
-    @DateTimeFormat(pattern = "yyyy-MM-dd hh:mm:ss")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date endDate;
 
     private String location;
@@ -40,7 +40,7 @@ public class Trip {
     private int tripRating;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name = "user_id", nullable = false)
+    @JoinColumn(name = "user_id", nullable=true)
     private User user;
 
     public Trip(Date startDate, Date endDate, String location, String description, int tripRating) {

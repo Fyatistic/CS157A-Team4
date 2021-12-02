@@ -48,12 +48,12 @@
 	<h1>Create a trip, <span sec:authentication="principal.username"> User</span></h1>
 	<form th:action="@{/createtrip}" method="post" th:object = "${trip}">
 		<div class="form-group">
-			<label class = "control-label" for="startDate">Start Date</label>
-			<input type ="date" id="startDate" class = "form:control" th:field="*{startDate}" required autofocus="autofocus"/>
+			<label class = "control-label" for="startDate">Start Date (yyyy-mm-dd)</label>
+			<input type ="text" id="startDate" class = "form:control" th:field="*{startDate}" required autofocus="autofocus"/>
 		</div>
 		<div class="form-group">
-			<label class = "control-label" for="endDate">End Date</label>
-			<input type ="date" id="endDate" class = "form:control" th:field="*{endDate}" required autofocus="autofocus"/>
+			<label class = "control-label" for="endDate">End Date (yyyy-mm-dd)</label>
+			<input type ="text" id="endDate" class = "form:control" th:field="*{endDate}" required autofocus="autofocus"/>
 		</div>
 		<div class="form-group">
 			<label class = "control-label" for="location">Location</label>
@@ -64,7 +64,7 @@
 			<input id ="description" class = "form:control" th:field="*{description}" required autofocus="autofocus"/>
 		</div>
 		<div class="form-group">
-			<label class = "control-label" for="tripRating">Trip Rating</label>
+			<label class = "control-label" for="tripRating">Trip Rating (out of 5)</label>
 			<input type = "number" id="tripRating" class = "form:control" th:field="*{tripRating}" required autofocus="autofocus"/>
 		</div>
 		<div class="form-group">

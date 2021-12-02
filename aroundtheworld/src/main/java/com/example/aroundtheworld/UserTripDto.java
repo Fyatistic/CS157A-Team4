@@ -1,6 +1,6 @@
 package com.example.aroundtheworld;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class UserTripDto {
     private Date startDate;
