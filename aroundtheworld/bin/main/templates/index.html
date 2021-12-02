@@ -39,8 +39,29 @@
 
 <div class="container">
 	<h1>Around the World</h1>
-	Welcome <span sec:authentication="principal.username"> User</span>
+	<h2 align="center"><span sec:authentication="principal.username">User</span>'s Trips</h2>
+    <br/>
+    <table class="table table-striped">
+        <thead class="thread-dark">
+            <th scope="row">Location</th>
+			<th scope="row">Start Date</th>
+			<th scope="row">End Date</th>
+			<th scope="row">Description</th>
+			<th scope="row">Trip Rating</th>
+        </thead>
+		<tbody>
+			<tr th:each="trip:${trips}">
+				<td th:text="${trip.location}"></td>
+            	<td th:text="${trip.startDate}"></td>
+         	    <td th:text="${trip.endDate}"></td>
+				<td th:text="${trip.description}"></td>
+				<td th:text="${trip.tripRating}"></td>
+			</tr>
+        </tbody>
+    </table>
 	<br>
+	<br>
+	<h2>Want to create a trip?</h2>
 	<a th:href="@{/createtrip}">Create Trip!</a>
 </div>
 		</body>
