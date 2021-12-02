@@ -12,8 +12,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
+
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
 import javax.persistence.JoinColumn;
 
 @Entity
@@ -32,15 +37,19 @@ public class User {
 	
 	// retrieves all roles eagerly given user
 	// operations on parent entity also performed on child entities
-	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@ManyToMany(cascade = CascadeType.ALL)
+	@LazyCollection(LazyCollectionOption.FALSE)
 	@JoinTable(
 			name = "users_roles",
 			joinColumns = @JoinColumn(
 		            name = "user_id", referencedColumnName = "id"),
 			inverseJoinColumns = @JoinColumn(
 				            name = "role_id", referencedColumnName = "id"))
-	
 	private Collection<Role> roles;
+
+	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+	@LazyCollection(LazyCollectionOption.FALSE)
+	private Collection<Trip> trips;
 	
 	public User() {
 		
@@ -83,6 +92,12 @@ public class User {
 	}
 	public void setRoles(Collection<Role> roles) {
 		this.roles = roles;
+	}
+	public Collection<Trip> getTrips() {
+		return trips;
+	}
+	public void setTrips(Collection<Trip> trips) {
+		this.trips = trips;
 	}
 
 }

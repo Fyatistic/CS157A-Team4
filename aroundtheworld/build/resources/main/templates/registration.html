@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:th="http://www.thymeleaf.org">
+	  <html>
+		<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Register Account</title>
+		<link href="https://fonts.googleapis.com/css?family=ZCOOL+XiaoWei"
+			rel="stylesheet">
+		<link th:href="@{css/style3.css}" rel="stylesheet" type="text/css" />
+		</head>
+		<body>
+		<h2 style = "text-align:center">Around The World</h2>
+			<!--Registration form-->
+			<div class="container">
+				<div class="regbox box">
+					<img class="avatar" src="img/Worldy.png">
+					<h1>Register Account</h1>
+					<form th:action="@{/registration}" method="post" th:object="${user}">
+							<p>Username</p>
+							<input type ="text" id="username" class="form-control" th:field="*{username}" placeholder="Enter Username" required autofocus="autofocus" />
+							<p>Email</p>
+							<input type ="text" id="email" class="form-control" th:field="*{email}" placeholder="Enter Email" required autofocus="autofocus" />
+							<p>Password</p>
+							 <input id="password" class="form-control" type="password" th:field="*{password}" placeholder="Enter Password" required autofocus="autofocus" />
+							 <input type="submit" value="Register" onclick="myFunction()"> 
+							 <a href="/" th:href="@{/login}"><h3>Login Here</h3></a>
+							<!-- error message -->
+							<h6 style = "text-align:center" th:if="${param.error}" class="alert alert-danger">Username already taken!</h6>
+							<!-- logout message -->
+							<h5 th:if="${param.success}" class="alert alert-info">Account Created!</h5>
+					</form>
+				</div>
+			</div>
+		</body>
+</html>

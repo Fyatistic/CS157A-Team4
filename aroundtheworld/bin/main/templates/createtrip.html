@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<meta charset="ISO-8859-1">
+<title>Create a Trip!</title>
+
+<link rel="stylesheet"	
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous">
+
+
+</head>
+	<body style="text-align:center">
+<!-- create navigation bar (header) -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed"
+				data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+				aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span> <span
+					class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#" th:href="@{/}">Around the World</a>
+		</div>
+		<div id="navbar" class="collapse navbar-collapse">
+			<ul class="nav navbar-nav">
+				<li sec:authorize="isAuthenticated()"><a th:href="@{/logout}">Logout</a></li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+<br>
+<br>
+
+<!--Create HTML trip form -->
+<div class="container">
+	<div class="row">
+		<!--success message-->
+		<div th:if=${param:success}">
+			<div class="alert alert info">You've successfully created a trip!</div>
+		</div>
+	</div>
+	<h1>Create a trip, <span sec:authentication="principal.username"> User</span></h1>
+	<form th:action="@{/createtrip}" method="post" th:object = "${trip}">
+		<div class="form-group">
+			<label class = "control-label" for="startDate">Start Date</label>
+			<input type ="date" id="startDate" class = "form:control" th:field="*{startDate}" required autofocus="autofocus"/>
+		</div>
+		<div class="form-group">
+			<label class = "control-label" for="endDate">End Date</label>
+			<input type ="date" id="endDate" class = "form:control" th:field="*{endDate}" required autofocus="autofocus"/>
+		</div>
+		<div class="form-group">
+			<label class = "control-label" for="location">Location</label>
+			<input id="location" class = "form:control" th:field="*{location}" required autofocus="autofocus"/>
+		</div>
+		<div class="form-group">
+			<label class = "control-label" for="description">Description</label>
+			<input id ="description" class = "form:control" th:field="*{description}" required autofocus="autofocus"/>
+		</div>
+		<div class="form-group">
+			<label class = "control-label" for="tripRating">Trip Rating</label>
+			<input type = "number" id="tripRating" class = "form:control" th:field="*{tripRating}" required autofocus="autofocus"/>
+		</div>
+		<div class="form-group">
+			<button type="submit" class="btn btn-success">Create Trip!</button>
+		</div>
+	</form>
+</div>
+
+		</body>
+</html>

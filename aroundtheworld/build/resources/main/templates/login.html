@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Log in to Account</title>
+		<link href="https://fonts.googleapis.com/css?family=ZCOOL+XiaoWei"
+			rel="stylesheet">
+		<link th:href="@{css/style3.css}" rel="stylesheet" type="text/css" />
+		</head>
+<body>
+	<h2 style = "text-align:center">Around The World</h2>
+	<div class = "container">
+			<div class="regbox box">
+				<img class="avatar" src="img/Worldy.png">
+				<h1>Login</h1>
+				<form th:action="@{/login}" method="post">	
+						<p>Username</p>
+						<input type="text" class = "form-control" id ="username" name = "username" placeholder="Enter Username" autofocus="autofocus">
+						<p>Password</p>
+						<input type="password" id="password" name="password" class="form-control" placeholder="Enter Password" />
+						<input type="submit" name="login-submit" id="login-submit" class="form-control btn btn-primary" value="Log In" />
+						<a href="/" th:href="@{/registration}"><h3>Register Here</h3></a>
+						<!-- error message -->
+						<h6 style = "text-align:center" th:if="${param.error}" class="alert alert-danger">Invalid username or password.</h6>
+						<!-- logout message -->
+						<h5 th:if="${param.logout}" class="alert alert-info">You have been logged out.</h4>
+				</form>
+			</div>
+	</div>
+
+</body>
+</html>

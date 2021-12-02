@@ -40,8 +40,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
+		// every request requires the user to be authenticated
 		http.authorizeRequests().antMatchers(
-				 "/registration**",
+				 	"/registration**",
+					"/createtrip**",
 				 	"/error**",
 	                "/js/**",
 	                "/css/**",
@@ -49,6 +51,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 					).permitAll()
 		.anyRequest().authenticated()
 		.and()
+		// form authentication supported
 		.formLogin()
 		.loginPage("/login")
 		.permitAll()
