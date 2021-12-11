@@ -52,6 +52,7 @@ Similar to the motivation, creating a platform where users can focus on their tr
 
 ### Commands
 ![images](https://github.com/Fyatistic/CS157A-Team4/blob/main/howtorun.png)
+Go to your CMD and make sure the location is inside the aroundtheworld folder. Then type these commands,
 - gradle build -x test
 - gradle bootJar
 - gradle bootRun
