@@ -49,8 +49,9 @@ Similar to the motivation, creating a platform where users can focus on their tr
 ### Requirements
 - Gradle 5.6 
 - Java 11
-![images](https://github.com/Fyatistic/CS157A-Team4/blob/main/howtorun.png)
+
 ### Commands
+![images](https://github.com/Fyatistic/CS157A-Team4/blob/main/howtorun.png)
 - gradle build -x test
 - gradle bootJar
 - gradle bootRun
