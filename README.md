@@ -30,22 +30,31 @@ Similar to the motivation, creating a platform where users can focus on their tr
 
 
 ## Hardware/Software:
-+ Apache Tomcat v10.0.11
-+ Eclipse EE for Web Developers v2021-06
++ Spring Boot
++ VSCode (IDE)
 + MySQL Workbench v8.0 CE
-+ Figma (for online collaborative mock-ups)
-+ StarUML v4.0.1
++ Java 11
++ Gradle 5.6
 
 ## RDBMS:
 + MySQL Community Server v8.0.26
 
 ## Application Languages:
-+ Java (JDK 15.0.2)
++ Java (JDK 11)
 + SQL
 + HTML
-+ Future languages to be added as needed
++ CSS
 
-#
+## How to run
+### Requirements
+- Gradle 5.6 
+- Java 11
+![images](https://github.com/Fyatistic/CS157A-Team4/blob/main/howtorun.png)
+### Commands
+- gradle build -x test
+- gradle bootJar
+- gradle bootRun
+
 #
 ***
 #
