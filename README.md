@@ -50,7 +50,7 @@ Similar to the motivation, creating a platform where users can focus on their tr
 ### Requirements
 - Gradle 5.6 
 - Java 11
-- Docker
+- Docker with mySQL container
 
 ### Commands
 Before running these commands, make sure docker is running with a mysql container.
