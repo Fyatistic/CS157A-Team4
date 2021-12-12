@@ -60,9 +60,8 @@ Before running these commands, make sure docker is running with a mysql containe
 - This command will allow the container to be set up as shown by the screenshot below. The container was created through the given command.
 ![images](https://github.com/Fyatistic/CS157A-Team4/blob/main/docker.png)
 
-
 ![images](https://github.com/Fyatistic/CS157A-Team4/blob/main/application.png)
-- NOTE*: There has to be a database created already named cs157a, so create a database in your MYSQL workbench named cs157a since that's the name of the database that our program connects to.
+- NOTE*: There has to be a database created already named cs157a, so create a database in your MYSQL workbench named cs157a since that's the name of the database that our program connects to. Also make sure the datasource.username and datasource.password match with the mySQL container command.
 
 (Note you can't have MYSQL 8.0 running on services because this will interfere with the docker MYSQL)
 ![images](https://github.com/Fyatistic/CS157A-Team4/blob/main/howtorun.png)
