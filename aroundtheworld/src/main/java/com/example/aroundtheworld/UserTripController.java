@@ -43,7 +43,7 @@ public class UserTripController {
    @GetMapping("/index") 
    public String getTrips(Model model) {
         List<Trip> trips = tripService.findAllTrips();
-        model.addAttribute("index", trips);
+        model.addAttribute("trips", trips);
         return "index";
    }
 }

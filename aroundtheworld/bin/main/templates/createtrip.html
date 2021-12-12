@@ -64,8 +64,8 @@
 			<input id ="description" class = "form:control" th:field="*{description}" required autofocus="autofocus"/>
 		</div>
 		<div class="form-group">
-			<label class = "control-label" for="tripRating">Trip Rating (out of 5)</label>
-			<input type = "number" id="tripRating" class = "form:control" th:field="*{tripRating}" required autofocus="autofocus"/>
+			<label class = "control-label" for="tripRating">Trip Rating (between 1 to 5)</label>
+			<input type = "number" id="tripRating" class = "form:control" th:field="*{tripRating}" required autofocus="autofocus" min="1" max="5"/>
 		</div>
 		<div class="form-group">
 			<button type="submit" class="btn btn-success">Create Trip!</button>
