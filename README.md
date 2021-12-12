@@ -57,8 +57,9 @@ Before running these commands, make sure docker is running with a mysql containe
 - To get the MYSQL container running you have to run this command in your command line after docker is set up
 - "docker run -d --name mysql -td -p 3306:3306 -e MYSQL_ROOT_PASSWORD=cmpe172 mysql:8.0"
 - Note*: That the password is cmpe172, when entering the MYSQL account, the name would be root with the password being cmpe172.
+- This command will allow the container to be set up as shown by the screenshot below. The container was created through the given command.
 ![images](https://github.com/Fyatistic/CS157A-Team4/blob/main/docker.png)
-- This command will allow the container to be set up as shown by the screenshot. The container was created through the given command.
+
 
 ![images](https://github.com/Fyatistic/CS157A-Team4/blob/main/application.png)
 - NOTE*: There has to be a database created already named cs157a, so create a database in your MYSQL workbench named cs157a since that's the name of the database that our program connects to.
