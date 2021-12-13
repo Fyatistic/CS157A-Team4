@@ -13,7 +13,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.example.aroundtheworld.Role;
-import com.example.aroundtheworld.User;
+import com.example.aroundtheworld.TravelUser;
 import com.example.aroundtheworld.UserRepository;
 import com.example.aroundtheworld.UserRegistrationDto;
 
@@ -32,8 +32,8 @@ public class UserServiceImpl implements UserService{
 	}
 
 	@Override
-	public User save(UserRegistrationDto registrationDto) {
-		User user = new User(registrationDto.getUsername(), registrationDto.getEmail(), passwordEncoder.encode(registrationDto.getPassword()), Arrays.asList(new Role("ROLE_USER")));
+	public TravelUser save(UserRegistrationDto registrationDto) {
+		TravelUser user = new TravelUser(registrationDto.getUsername(), registrationDto.getEmail(), passwordEncoder.encode(registrationDto.getPassword()), Arrays.asList(new Role("ROLE_USER")));
 		
 		return userRepository.save(user);
 	}
@@ -41,7 +41,7 @@ public class UserServiceImpl implements UserService{
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 	
-		User user = userRepository.findByUsername(username);
+		TravelUser user = userRepository.findByUsername(username);
 		if(user == null) {
 			throw new UsernameNotFoundException("Invalid username or password.");
 		}

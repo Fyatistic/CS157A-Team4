@@ -41,15 +41,20 @@ public class Trip {
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id", nullable=true)
-    private User user;
+    private TravelUser user;
 
-    public Trip(Date startDate, Date endDate, String location, String description, int tripRating) {
+    public Trip() {
+        super();
+    }
+
+    public Trip(Date startDate, Date endDate, String location, String description, int tripRating, TravelUser user) {
         super();
         this.startDate = startDate;
         this.endDate = endDate;
         this.location = location;
         this.description = description;
         this.tripRating = tripRating;
+        this.user = user;
     }
 
     public Long getTripId() {
