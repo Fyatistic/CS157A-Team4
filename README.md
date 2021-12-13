@@ -2,7 +2,6 @@
 ### _CS157A -- Team 4_
 #### Contributor: Anni Shao, Victor Martinez Zarate, Richard Perry
 #
-#
 ***
 ## Overview
 
@@ -52,7 +51,7 @@ Similar to the motivation, creating a platform where users can focus on their tr
 - Java 11
 - Docker with mySQL container
 
-### Commands
+### Prereqs
 Before running these commands, make sure docker is running with a mysql container.
 - To get the MYSQL container running you have to run this command in your command line after docker is set up
 - "docker run -d --name mysql -td -p 3306:3306 -e MYSQL_ROOT_PASSWORD=cmpe172 mysql:8.0"
@@ -64,16 +63,19 @@ Before running these commands, make sure docker is running with a mysql containe
 - NOTE*: There has to be a database created already named cs157a, so create a database in your MYSQL workbench named cs157a since that's the name of the database that our program connects to. Also make sure the datasource.username and datasource.password match with the mySQL container command.
 (Note you can't have MYSQL 8.0 running on services because this will interfere with the docker MYSQL)
 
+### Running with the command line in Mac/Linux:
 ![images](https://github.com/Fyatistic/CS157A-Team4/blob/main/howtorun.png)
 Go to your CMD and make sure the location is inside the aroundtheworld folder. Then type these commands,
 - gradle build -x test
 - gradle bootJar
 - gradle bootRun
+To access the website, navigate to the localhost:8080// link on any web browser. This should be what the output looks like:
+![images](https://github.com/Fyatistic/CS157A-Team4/blob/main/success.jpg)
 
-The process to run the application via Visual Studio Code (IDE) is much simpler:
+### Running in VSCode:
 First, ensure that the Spring Boot Extension Pack is downloaded in Visual Studio Code.
 ![images](https://github.com/Fyatistic/CS157A-Team4/blob/main/vscode_ext.jpg)
-- With the AroundtheworldApplication.java class open, navigate to the 'Run' bar and click on the 'Start Debugging' button.
+With the AroundtheworldApplication.java class open, navigate to the 'Run' bar and click on the 'Start Debugging' button.
 ![images](https://github.com/Fyatistic/CS157A-Team4/blob/main/vscode_run.jpg)
 
 To access the website, navigate to the localhost:8080// link on any web browser. This should be what the output looks like:
