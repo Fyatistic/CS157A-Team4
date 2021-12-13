@@ -70,6 +70,14 @@ Go to your CMD and make sure the location is inside the aroundtheworld folder. T
 - gradle bootJar
 - gradle bootRun
 
+The process to run the application via Visual Studio Code (IDE) is much simpler:
+First, ensure that the Spring Boot Extension Pack is downloaded in Visual Studio Code.
+![images](https://github.com/Fyatistic/CS157A-Team4/blob/main/vscode_ext.png)
+- With the AroundtheworldApplication.java class open, navigate to the 'Run' bar and click on the 'Start Debugging' button.
+![images](https://github.com/Fyatistic/CS157A-Team4/blob/main/vscode_run.png)
+
+To access the website, navigate to the localhost:8080// link on any web browser. This should be what the output looks like:
+![images](https://github.com/Fyatistic/CS157A-Team4/blob/main/success.png)
 #
 ***
 #
