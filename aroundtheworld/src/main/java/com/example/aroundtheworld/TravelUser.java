@@ -47,19 +47,9 @@ public class TravelUser {
 				            name = "role_id", referencedColumnName = "id"))
 	private Collection<Role> roles;
 
-	//@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
 	@OneToMany(fetch=FetchType.EAGER, cascade = CascadeType.ALL)
-	//@LazyCollection(LazyCollectionOption.FALSE)
 	@JoinColumn(name="user_id")
 	private Collection<Trip> trips;
-
-
-	// @ManyToMany(fetch = FetchType.EAGER)
-	// @JoinTable(
-	// 	name = "relation",
-	// 	joinColumns =  @JoinColumn(name = "user_id"),
-	// 	inverseJoinColumns = @JoinColumn(name = "following_id"))
-	// private Collection<User> following;
 	
 	public TravelUser() {
 		
@@ -109,10 +99,4 @@ public class TravelUser {
 	public void setTrips(Collection<Trip> trips) {
 		this.trips = trips;
 	}
-	// public Collection<User> getFollowers() {
-	// 	return following;
-	// }
-	// public void setFollowers(Collection<User> following) {
-	// 	this.following = following;
-	// }
 }
